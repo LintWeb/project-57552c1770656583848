@@ -3,9 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project-57552c1770656583848</title>
+    <title>Nurnabi Rahat | Tech Sales & RFID Specialist</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #3b82f6;
+            --accent: #64748b;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p { margin-bottom: 1.5rem; }
+
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: none; /* Mobile first */
+            list-style: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.9)), 
+                        url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=2000') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        #hero h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Utilities */
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Mobile Nav Toggle (Visual only for this template) */
+        .mobile-nav {
+            display: block;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-nav { display: none; }
+            #hero h1 { font-size: 3.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Blank white page -->
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">NR.</a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-nav">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Nurnabi Rahat</h1>
+                <p>Bridging the gap between Computer Science and Tech Sales. Specialist in RFID technology, customer handling, and strategic communication.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div>
+                        <h2 style="font-size: 2rem;">Professional Background</h2>
+                        <p>With a solid foundation in <strong>Computer Science</strong>, I bring a unique technical perspective to the world of sales and customer management. My graduation in CS allows me to understand the "how" behind the products I sell, enabling me to translate complex technical specifications into clear business value for clients.</p>
+                        <p>I specialize in identifying client needs and delivering high-impact technological solutions, particularly in the evolving landscape of RFID and automated tracking systems.</p>
+                    </div>
+                    <div class="card" style="background: #f1f5f9;">
+                        <h3>Quick Facts</h3>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 1rem;">🎓 CS Graduate</li>
+                            <li style="margin-bottom: 1rem;">📡 RFID Specialist</li>
+                            <li style="margin-bottom: 1rem;">🤝 Customer Success Driven</li>
+                            <li style="margin-bottom: 1rem;">💡 Tech Sales Consultant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise" style="background: #f8fafc;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Core Expertise</h2>
+                </div>
+                <div class="expertise-grid">
+                    <div class="card">
+                        <h3>Tech Sales</h3>
+                        <p>Expertise in driving revenue by aligning innovative tech solutions with enterprise business goals. Skilled in the full sales lifecycle from lead generation to closing.</p>
+                    </div>
+                    <div class="card">
+                        <h3>RFID Technology</h3>
+                        <p>Deep knowledge of Radio Frequency Identification systems, implementation strategies, and their application in logistics, inventory, and security.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Strategic Communication</h3>
+                        <p>A natural communicator who excels at building rapport with stakeholders and simplifying complex technical concepts for non-technical audiences.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Customer Handling</h3>
+                        <p>Dedicated to delivering exceptional client experiences through proactive problem-solving and relationship management.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Let's Connect</h2>
+                </div>
+                <div class="contact-info">
+                    <p>Interested in collaborating or learning more about how RFID technology and technical sales can transform your business?</p>
+                    <p style="font-weight: 600; font-size: 1.2rem; color: var(--secondary);">nurnabi.rahat@email.com</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="mailto:nurnabi.rahat@email.com" class="btn">Send a Message</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Nurnabi Rahat. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
